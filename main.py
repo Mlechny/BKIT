@@ -25,6 +25,8 @@ def get_roots(a, b, c):
             root2 = - math.sqrt(root)
             result.append(root1)
             result.append(root2)
+        elif root == 0.0:
+            result.append(root)
     elif D > 0.0:
         sqD = math.sqrt(D)
         root1 = (-b+sqD) / (2.0*a)
@@ -33,12 +35,16 @@ def get_roots(a, b, c):
             root21 = - math.sqrt(root1)
             result.append(root11)
             result.append(root21)
+        elif root1 == 0.0:
+            result.append(root1)
         root2 = (-b-sqD) / (2.0*a)
         if root2 > 0.0:
             root12 = math.sqrt(root2)
             root22 = - math.sqrt(root2)
             result.append(root12)
             result.append(root22)
+        elif root2 == 0.0:
+            result.append(root2)
     return result
 
 def main():
@@ -49,8 +55,12 @@ def main():
     len_roots = len(roots)
     if len_roots == 0:
         print('Нет корней')
+    elif len_roots == 1:
+        print('Один корень: {}'.format(roots[0]))
     elif len_roots == 2:
         print('Два корня: {} и {}'.format(roots[0], roots[1]))
+    elif len_roots == 3:
+        print('Три корня: {}, {} и {}'.format(roots[0], roots[1], roots[2]))
     elif len_roots == 4:
         print ('Четыре корня: {}, {}, {} и {}'.format(roots[0], roots[1], roots[2], roots[3]))
 
