@@ -6,9 +6,9 @@ from PyQt6.QtWidgets import QApplication, QPushButton
 import sys
 
 def main():
-    r = Rectangle ("синего", 1, 3)
-    c = Circle ("синего", 2)
-    s = Square ("красного", 3)
+    r = Rectangle ("синего", 21, 21)
+    c = Circle ("синего", 21)
+    s = Square ("красного", 21)
     print(r)
     print(c)
     print(s)
